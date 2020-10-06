@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'PyGUIBox',
   packages = ['pyguibox'],
-  version = '0.1',
+  version = '0.2',
   license='MIT',
   description = 'A simple cross-platform tool for creating GUI message boxes.',
   author = 'Matin Najafi',
