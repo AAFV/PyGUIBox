@@ -8,7 +8,7 @@ setup(
   author = 'Matin Najafi',
   author_email = 'i.redbern@gmail.com',
   url = 'https://github.com/matin-me/pyguibox',
-  download_url = 'https://github.com/Matin-ME/PyGUIBox/archive/v_01.tar.gz',
+  download_url = 'https://github.com/Matin-ME/PyGUIBox/archive/v_02.tar.gz',
   keywords = ['Message Box', 'GUI', 'Message', 'Alert', 'Input', 'MsgBox'],
   install_requires=[],
   classifiers=[
