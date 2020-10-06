@@ -1,4 +1,4 @@
-PyGUIBox  |  Version 1.0
+PyGUIBox  |  Version 0.1
 =========
 
 PyGUIBox is a simple cross-platform tool for creating GUI message boxes.
