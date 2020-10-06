@@ -10,10 +10,7 @@ setup(
   url = 'https://github.com/matin-me/pyguibox',
   download_url = 'https://github.com/Matin-ME/PyGUIBox/archive/v_01.tar.gz',
   keywords = ['Message Box', 'GUI', 'Message', 'Alert', 'Input', 'MsgBox'],
-  install_requires=[
-          'sys',
-          'ctypes',
-      ],
+  install_requires=[],
   classifiers=[
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python :: 3'
