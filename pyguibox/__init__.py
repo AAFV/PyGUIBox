@@ -9,6 +9,13 @@ import ctypes
 class PyGuiBoxException(Exception):
     pass
 
+def ResultCode(code):
+    if(code == 1): return "OK";
+    elif(code == 2): return "Cancel";
+    elif(code == 6): return "Yes";
+    elif(code == 7): return "No";
+    else: return code;
+
 if(sys.platform == 'win32'):
     try:
         import tkinter as tk
@@ -52,11 +59,7 @@ if(sys.platform == 'win32'):
             
         if(ALERT_ICON == None): MSG_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, ALERT_MB);
         else: MSG_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, ALERT_MB | ALERT_ICON);
-        if(MSG_BOX == 1): return "OK";
-        elif(MSG_BOX == 2): return "Cancel";
-        elif(MSG_BOX == 6): return "Yes";
-        elif(MSG_BOX == 7): return "No";
-        else: return MSG_BOX;
+        return ResultCode(MSG_BOX);
         
 
     def alert(message, title=None):
@@ -64,8 +67,8 @@ if(sys.platform == 'win32'):
         Returns the text of the button clicked on.
         """
         if(title == None): title = " ";
-        ctypes.windll.user32.MessageBoxW(0, message, title, 0x0);
-        return "OK";
+        ALERT_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, 0x0);
+        return ResultCode(ALERT_BOX);
 
     def confirm(message, title=None, mode=1):
         """Displays a simple confirm box.
@@ -80,11 +83,8 @@ if(sys.platform == 'win32'):
         elif(mode == 2): CONFIRM_MODE = 0x03;
         else: raise PyGuiBoxException("Unknown mode number");
         if(title == None): title = " ";
-        MSG_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, CONFIRM_MODE)
-        if(MSG_BOX == 6): return "Yes";
-        elif(MSG_BOX == 7): return "No";
-        elif(MSG_BOX == 2): return "Cancel";
-        else: return "OK";
+        CONFIRM_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, CONFIRM_MODE)
+        return ResultCode(CONFIRM_BOX);
 
     def prompt(message, title=None):
         """Displays a message box with text input.
@@ -127,11 +127,35 @@ if(sys.platform == 'win32'):
         if(PROMPT_RESULT == None): return "Cancel";
         elif(PROMPT_RESULT == ""): return None;
         else: return PROMPT_RESULT
+
+    def error(message, title=None):
+        """Displays a simple error message box with error icon and a single OK button.
+        Returns the text of the button clicked on.
+        """
+        if(title == None): title = " ";
+        ERROR_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, 0x0 | 0x10);
+        return ResultCode(ERROR_BOX);
+
+    def info(message, title=None):
+        """Displays a simple info message box with info icon and a single OK button.
+        Returns the text of the button clicked on.
+        """
+        if(title == None): title = " ";
+        ERROR_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, 0x0 | 0x40);
+        return ResultCode(ERROR_BOX);
+    
+    def warn(message, title=None):
+        """Displays a simple warn message box with warn icon  and a single OK button.
+        Returns the text of the button clicked on.
+        """
+        if(title == None): title = " ";
+        ERROR_BOX = ctypes.windll.user32.MessageBoxW(0, message, title, 0x0 | 0x30);
+        return ResultCode(ERROR_BOX);
     
 else:
     def errorLoadFunctions():
         raise PyGuiBoxException(
-            "You can only use (messagebox, alert, confirm, prompt, password) functions in Windows."
+            "You can only use PyGUIBox functions in Windows."
         )
 
     alert = confirm = prompt = password = errorLoadFunctions

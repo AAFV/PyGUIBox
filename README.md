@@ -1,4 +1,4 @@
-PyGUIBox  |  Version 0.2
+PyGUIBox  |  Version 0.3
 =========
 
 PyGUIBox is a simple cross-platform tool for creating GUI message boxes.
@@ -7,22 +7,6 @@ PyGUIBox is a simple cross-platform tool for creating GUI message boxes.
 
 Example Usage
 =============
-
-Show an alert box
---------------------------
-
-Displays a simple message box with text and a single OK button.<br>
-Returns the text of the button clicked on.<br>
-* You can also set the title of the message box.<br>
-Buttons for this message: OK<br>
-
-```python
-    >>> import pyguibox
-    >>> pyguibox.alert("This is a test")
-    'OK'
-    >>> pyguibox.alert("This is a test", title="Message box title")
-    'OK'
-```
 
 Show an custom message box
 --------------------------
@@ -53,6 +37,70 @@ Buttons for this message: OK<br>
     >>> box = messagebox(message="This is a test", title="Test Title", mode=2, icon=2)
     'Cancel'
     >>> box = messagebox(message="This is a test", title="Test Title", mode=1, icon=1)
+    'OK'
+```
+
+Show an alert box
+--------------------------
+
+Displays a simple message box with text and a single OK button.<br>
+Returns the text of the button clicked on.<br>
+* You can also set the title of the message box.<br>
+Buttons for this message: OK<br>
+
+```python
+    >>> import pyguibox
+    >>> pyguibox.alert("This is a test")
+    'OK'
+    >>> pyguibox.alert("This is a test", title="Message box title")
+    'OK'
+```
+
+Show an error box
+--------------------------
+
+Displays a simple message box with error icon and a single OK button.<br>
+Returns the text of the button clicked on.<br>
+* You can also set the title of the message box.<br>
+Buttons for this message: OK<br>
+
+```python
+    >>> import pyguibox
+    >>> pyguibox.error("This is a test")
+    'OK'
+    >>> pyguibox.error("This is a test", title="Message box title")
+    'OK'
+```
+
+Show an info box
+--------------------------
+
+Displays a simple message box with info icon and a single OK button.<br>
+Returns the text of the button clicked on.<br>
+* You can also set the title of the message box.<br>
+Buttons for this message: OK<br>
+
+```python
+    >>> import pyguibox
+    >>> pyguibox.info("This is a test")
+    'OK'
+    >>> pyguibox.info("This is a test", title="Message box title")
+    'OK'
+```
+
+Show an warn box
+--------------------------
+
+Displays a simple message box with warn icon and a single OK button.<br>
+Returns the text of the button clicked on.<br>
+* You can also set the title of the message box.<br>
+Buttons for this message: OK<br>
+
+```python
+    >>> import pyguibox
+    >>> pyguibox.warn("This is a test")
+    'OK'
+    >>> pyguibox.warn("This is a test", title="Message box title")
     'OK'
 ```
 
