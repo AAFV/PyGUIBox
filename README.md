@@ -32,11 +32,11 @@ Buttons for this message: OK<br>
 
 ```python
     >>> import pyguibox
-    >>> box = messagebox(message="This is a test", title="Test Title", mode=3, icon=3)
+    >>> pyguibox.messagebox(message="This is a test", title="Test Title", mode=3, icon=3)
     'Yes'
-    >>> box = messagebox(message="This is a test", title="Test Title", mode=2, icon=2)
+    >>> pyguibox.messagebox(message="This is a test", title="Test Title", mode=2, icon=2)
     'Cancel'
-    >>> box = messagebox(message="This is a test", title="Test Title", mode=1, icon=1)
+    >>> pyguibox.messagebox(message="This is a test", title="Test Title", mode=1, icon=1)
     'OK'
 ```
 
@@ -118,13 +118,13 @@ Buttons for this message: OK<br>
 
 ```python
     >>> import pyguibox
-    >>> box = pyguibox.confirm("This is a test", mode=1)
+    >>> pyguibox.confirm("This is a test", mode=1)
     'OK'
-    >>> box = pyguibox.confirm("This is a test", mode=2)
+    >>> pyguibox.confirm("This is a test", mode=2)
     'Yes'
-    >>> box = pyguibox.confirm("This is a test", mode=1, title="Message box title")
-    'Cance;'
-    >>> box = pyguibox.confirm("This is a test", mode=2, title="Message box title")
+    >>> pyguibox.confirm("This is a test", mode=1, title="Message box title")
+    'Cancel'
+    >>> pyguibox.confirm("This is a test", mode=2, title="Message box title")
     'No'
 ```
 
@@ -135,18 +135,18 @@ Displays a message box with text input.<br>
 You can customize the text and title of this message box.<br>
 Returns text entered by the user.<br>
 (None return: The user has not entered anything)<br>
-(Cancel return: The user has clicked the cancel button)<br>
+('Cancel' return: The user has clicked the cancel button)<br>
 * You can also set the title of the message box.<br>
 Mode 1 buttons: OK, Cancel<br>
 
 
 ```python
     >>> import pyguibox
-    >>> box = pyguibox.prompt("Enter your name :")
+    >>> pyguibox.prompt("Enter your name :")
     'Cancel'
-    >>> box = pyguibox.prompt("This is a test")
-    'None'
-    >>> box = pyguibox.prompt("This is a test")
+    >>> pyguibox.prompt("This is a test")
+    None
+    >>> pyguibox.prompt("This is a test")
     'this is a test'
 ```
 
@@ -158,7 +158,7 @@ Displays a message box with text input.<br>
 You can customize the text and title of this message box.<br>
 Returns text entered by the user.<br>
 (None return: The user has not entered anything)<br>
-(Cancel return: The user has clicked the cancel button)<br>
+('Cancel' return: The user has clicked the cancel button)<br>
 * You can also set the title of the message box.<br>
 Mode 1 buttons: OK, Cancel<br>
 
@@ -166,8 +166,8 @@ Mode 1 buttons: OK, Cancel<br>
     >>> import pyguibox
     >>> box = pyguibox.password("Enter your name :")
     'Cancel'
-    >>> box = pyguibox.password("This is a test")
-    'None'
+    >>> pyguibox.password("This is a test")
+    None
     >>> box = pyguibox.password("This is a test")
     'abcdefgh'
 ```
