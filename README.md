@@ -147,7 +147,7 @@ Mode 1 buttons: OK, Cancel<br>
     >>> pyguibox.prompt("This is a test")
     None
     >>> pyguibox.prompt("This is a test")
-    'this is a test'
+    'The Text You Have Entered'
 ```
 
 Show an password input box
@@ -164,12 +164,12 @@ Mode 1 buttons: OK, Cancel<br>
 
 ```python
     >>> import pyguibox
-    >>> box = pyguibox.password("Enter your name :")
+    >>> pyguibox.password("Enter your name :")
     'Cancel'
     >>> pyguibox.password("This is a test")
     None
-    >>> box = pyguibox.password("This is a test")
-    'abcdefgh'
+    >>> pyguibox.password("This is a test")
+    'ThePasswordYouHaveEntered'
 ```
 
 How Does PyGUIBox Work?
